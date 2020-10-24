@@ -1,5 +1,6 @@
 import React from "react";
 import './App.css';
+import {Header} from "./component/Header";
 
 // const players = [
 //   {name: 'LDK', score: 30, id: 1},
@@ -11,14 +12,8 @@ import './App.css';
 //펑션 컴포넌트 되는 조건
 //첫글자는 대문자
 // react element 리턴
-let Header = (props) => {
-  return (
-    <header className='header'>
-      <h1 className="h1">{props.title}</h1>
-      <span className="stats">{props.players}</span>
-    </header>
-  );
-}
+
+
 
 class Counter extends React.Component {
   state = {
