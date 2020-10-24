@@ -1,20 +1,10 @@
 import React from "react";
 import './App.css';
 import {Header} from "./component/Header";
-import Counter from "./component/Counter";
+import Player from "./component/Players";
 
 
-let Player = (props) => {
-  return (
-    <div className="player">
-      <span className='player-name'>
-      <button className='remove-player' onClick={() => props.removePlayer(props.id)}>x</button>
-      <span className="player-name">{props.name}</span>
-      </span>
-      <Counter score={props.score}></Counter>
-    </div>
-  )
-}
+
 
 class App extends React.Component {
   state = {
