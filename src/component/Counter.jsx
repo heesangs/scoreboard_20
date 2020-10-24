@@ -47,4 +47,11 @@ class Counter extends React.Component {
   }
 }
 
+//펑션 컴포넌트 되는 조건
+//첫글자는 대문자
+// react element 리턴
+
+//클릭이벤트에는 함수형태로 와야한다.
+//바인드 디스를 해야하거나 혹은 애로우 펑션을 쓴다.
+
 export default Counter

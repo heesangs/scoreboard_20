@@ -3,23 +3,6 @@ import './App.css';
 import {Header} from "./component/Header";
 import Counter from "./component/Counter";
 
-// const players = [
-//   {name: 'LDK', score: 30, id: 1},
-//   {name: 'HONG', score: 40, id: 2},
-//   {name: 'KIM', score: 50, id: 3},
-//   {name: 'PARK', score: 60, id: 4},
-// ];
-
-//펑션 컴포넌트 되는 조건
-//첫글자는 대문자
-// react element 리턴
-
-
-
-
-//클릭이벤트에는 함수형태로 와야한다.
-//바인드 디스를 해야하거나 혹은 애로우 펑션을 쓴다.
-
 
 let Player = (props) => {
   return (
