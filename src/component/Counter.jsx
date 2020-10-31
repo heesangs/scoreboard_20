@@ -1,9 +1,6 @@
 import React from "react";
 
 class Counter extends React.Component {
-  state = {
-    score: 10
-  }
 
   // handleScore() {
   //   console.log(this);
@@ -29,7 +26,6 @@ class Counter extends React.Component {
     })
   }
 
-
   render() {
     return (
       <div className="counter">
@@ -37,7 +33,7 @@ class Counter extends React.Component {
           this.handleScore(-1, e)
         }}>-
         </button>
-        <span className="counter-score">{this.state.score}</span>
+        <span className="counter-score">{this.props.score}</span>
         <button className="counter-action increment" onClick={(e) => {
           this.handleScore(1, e)
         }}>+
