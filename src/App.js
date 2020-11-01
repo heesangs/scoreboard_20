@@ -40,6 +40,10 @@ class App extends React.Component {
    })
   }
 
+  handleAddPlayer = () => {
+    console.log('handleAddPlayer')
+  }
+
   render() {
     return (
       <div className="scoreboard">
@@ -67,7 +71,7 @@ class App extends React.Component {
           }) 
           // map : item(배열안 요소)의 그룹값만 모아서 새로운 배열을 만듦 (유사:map, reducer, filter)
         } 
-        <AddPlayerForm></AddPlayerForm>
+        <AddPlayerForm addPlayer={handleAddPlayer}></AddPlayerForm>
       </div>
     );
   }
