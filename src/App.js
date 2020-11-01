@@ -42,7 +42,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="scoreboard">
-        <Header title='scoreboard' players={1}></Header>
+        <Header title='scoreboard' players={this.state.players}></Header>
         {/*속성이 해더의 제이슨객체로 넘어간다*/}
 
         {/*Players List*/}

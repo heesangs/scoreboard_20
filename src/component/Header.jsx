@@ -5,7 +5,7 @@ export const Header = (props) => {
   return (
     <header className='header'>
       <h1 className="h1">{props.title}</h1>
-      <Statistics></Statistics>
+      <Statistics players={props.players}></Statistics>
     </header>
   );
 }
