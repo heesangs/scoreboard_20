@@ -1,5 +1,6 @@
 import React from "react";
 import './App.css';
+import AddPlayerForm from "./component/AddPlayerForm";
 import { Header } from "./component/Header";
 import Player from "./component/Players";
 
@@ -66,6 +67,7 @@ class App extends React.Component {
           }) 
           // map : item(배열안 요소)의 그룹값만 모아서 새로운 배열을 만듦 (유사:map, reducer, filter)
         } 
+        <AddPlayerForm></AddPlayerForm>
       </div>
     );
   }
