@@ -28,28 +28,28 @@ class App extends React.Component {
     })
   }
 
-  handleChangeScore = (delta,id) => {
-   console.log('handleChangeScore', id)
-   this.setState((prevState) => {
-    const players = [...prevState.players];
-    players.forEach((player) => {
-      if(player.id ===id){
-        player.score += delta;
-      }
+  handleChangeScore = (delta, id) => {
+    console.log('handleChangeScore', id)
+    this.setState((prevState) => {
+      const players = [...prevState.players];
+      players.forEach((player) => {
+        if (player.id === id) {
+          player.score += delta;
+        }
+      })
+      return { players: players }
     })
-    return {players:players}
-   })
   }
 
   handleAddPlayer = (name) => {
     console.log(name);
     this.setState(prevState => {
       const players = [...prevState.players];
-      players.push({name, score:0, id:++maxId})
+      players.push({ name, score: 0, id: ++maxId })
 
-      return({players})
+      return ({ players })
     })
-}
+  }
 
   render() {
     return (
@@ -75,9 +75,9 @@ class App extends React.Component {
               removePlayer={this.handleRemovePlayer}
               changeScore={this.handleChangeScore}
             ></Player>
-          }) 
+          })
           // map : item(배열안 요소)의 그룹값만 모아서 새로운 배열을 만듦 (유사:map, reducer, filter)
-        } 
+        }
         <AddPlayerForm addPlayer={this.handleAddPlayer}></AddPlayerForm>
       </div>
     );
