@@ -26,6 +26,10 @@ class App extends React.Component {
     })
   }
 
+  handleChangeScore = (id) => {
+   console.log('handleChangeScore', id)
+  }
+
   render() {
     return (
       <div className="scoreboard">
@@ -48,9 +52,11 @@ class App extends React.Component {
               key={player.id}
               id={player.id}
               removePlayer={this.handleRemovePlayer}
+              changeScore={this.handleChangeScore}
             ></Player>
-          })
-        }
+          }) 
+          // map : item(배열안 요소)의 그룹값만 모아서 새로운 배열을 만듦 (유사:map, reducer, filter)
+        } 
       </div>
     );
   }

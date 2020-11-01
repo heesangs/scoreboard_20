@@ -8,6 +8,8 @@ class Counter extends React.Component {
   // }
   // 애로우펑션을 쓰지 않으면 bind(this)를 사용해야한다.
 
+
+  // ====type 1====
   // handleScore =() => {
   //   console.log(this);
   //   // this.state.score += 1;
@@ -16,26 +18,28 @@ class Counter extends React.Component {
   //   })
   // }
 
-  handleScore = (delta, e) => {
-    console.log(e.target);
-    // this.state.score += 1;
-    this.setState(prevState => {
-      return {
-        score: prevState.score + delta
-      }
-    })
-  }
+
+  // ====type 2====
+  // handleScore = (delta, e) => {
+  //   console.log(e.target);
+  //   // this.state.score += 1;
+  //   this.setState(prevState => {
+  //     return {
+  //       score: prevState.score + delta
+  //     }
+  //   })
+  // }
 
   render() {
     return (
       <div className="counter">
-        <button className="counter-action decrement" onClick={(e) => {
-          this.handleScore(-1, e)
+        <button className="counter-action decrement" onClick={() => {
+          this.props.changeScore(-1, this.props.id)
         }}>-
         </button>
         <span className="counter-score">{this.props.score}</span>
         <button className="counter-action increment" onClick={(e) => {
-          this.handleScore(1, e)
+          this.props.changeScore(1, this.props.id)
         }}>+
         </button>
       </div>
