@@ -5,6 +5,7 @@ import { Header } from "./component/Header";
 import Player from "./component/Players";
 
 
+let maxId = 4;
 
 class App extends React.Component {
   state = {
@@ -40,9 +41,15 @@ class App extends React.Component {
    })
   }
 
-  handleAddPlayer = () => {
-    console.log('handleAddPlayer')
-  }
+  handleAddPlayer = (name) => {
+    console.log(name);
+    this.setState(prevState => {
+      const players = [...prevState.players];
+      players.push({name, score:0, id:++maxId})
+
+      return({players})
+    })
+}
 
   render() {
     return (
@@ -71,7 +78,7 @@ class App extends React.Component {
           }) 
           // map : item(배열안 요소)의 그룹값만 모아서 새로운 배열을 만듦 (유사:map, reducer, filter)
         } 
-        <AddPlayerForm addPlayer={handleAddPlayer}></AddPlayerForm>
+        <AddPlayerForm addPlayer={this.handleAddPlayer}></AddPlayerForm>
       </div>
     );
   }

@@ -15,7 +15,8 @@ class AddPlayerForm extends React.Component {
         //e.preventDefault(); 로 막아준다.
         //e.stopPropagation(); 는 페이지를 막아준다.
         console.log('handleSubmit')
-        this.props.addPlayer();
+        this.props.addPlayer(this.state.value);
+        this.setState({value:""})
     }
 
     render() {
