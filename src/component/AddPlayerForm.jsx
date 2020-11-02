@@ -6,17 +6,12 @@ function AddPlayerForm(props) {
 
     const formRef = React.createRef();
     const textRef = React.createRef();
-    //vailidation: 확인이라는 뜻으로 유저가 inputfield에서 실수를 미연에 방지하도록 클라이언트단에서 막아주는것.
-    //즉, 회원가입시 이름, 이메일, 전화번호 등을 입력할때의 경고표시 등이 이에 속한다. 
 
     const handleChangeValue = (e) => {
         setValue(e.target.value)
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        //왜 새로고침이 일어날까? 실행시 form에 onSubmit이기때문에 페이지 전환이 일어난다.
-        //e.preventDefault(); 로 막아준다.
-        //e.stopPropagation(); 는 페이지를 막아준다.
 
         const form = formRef.current; //form node접근
         const player = textRef.current; //input node접근
