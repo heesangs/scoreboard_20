@@ -2,7 +2,7 @@ import React from "react";
 import './App.css';
 import AddPlayerForm from "./component/AddPlayerForm";
 import { Header } from "./component/Header";
-import Player from "./component/Players";
+import CustomPlayer from "./component/CustomPlayer";
 
 
 let maxId = 4;
@@ -67,14 +67,14 @@ class App extends React.Component {
 
         {
           this.state.players.map(player => {
-            return <Player
+            return <CustomPlayer
               name={player.name}
               score={player.score}
               key={player.id}
               id={player.id}
               removePlayer={this.handleRemovePlayer}
               changeScore={this.handleChangeScore}
-            ></Player>
+            ></CustomPlayer>
           })
           // map : item(배열안 요소)의 그룹값만 모아서 새로운 배열을 만듦 (유사:map, reducer, filter)
         }
