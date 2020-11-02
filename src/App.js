@@ -17,28 +17,28 @@ function App() {
   )
 
   const handleRemovePlayer = (id) => {
-      const newPlayers = players.filter((player) => player.id !== id)
-      setPlayer(newPlayers);
-      //filter : 배열요소를 걸러내는것.
+    const newPlayers = players.filter((player) => player.id !== id)
+    setPlayer(newPlayers);
+    //filter : 배열요소를 걸러내는것.
   }
 
   const handleChangeScore = (delta, id) => {
-      const newPlayers = [...players]
-      newPlayers.forEach((player) => {
-        if (player.id === id) {
-          player.score += delta;
-        }
-      })
-      //forEach : for같은 기본적인 반복문.
-      setPlayer(newPlayers)
+    const newPlayers = [...players]
+    newPlayers.forEach((player) => {
+      if (player.id === id) {
+        player.score += delta;
+      }
+    })
+    //forEach : for같은 기본적인 반복문.
+    setPlayer(newPlayers)
   }
 
   const handleAddPlayer = (name) => {
-      const newPlayers = [...players];
-      newPlayers.unshift({ name, score: 0, id: ++maxId })
-      //push: 배열의 끝에 요소를 추가.
-      //unshift: 배열의 처음에 요소를 추가.
-      setPlayer(newPlayers)
+    const newPlayers = [...players];
+    newPlayers.unshift({ name, score: 0, id: ++maxId })
+    //push: 배열의 끝에 요소를 추가.
+    //unshift: 배열의 처음에 요소를 추가.
+    setPlayer(newPlayers)
   }
 
   const getHighScore = () => {
