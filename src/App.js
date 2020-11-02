@@ -3,7 +3,7 @@ import './App.css';
 import AddPlayerForm from "./component/AddPlayerForm";
 import { Header } from "./component/Header";
 import CustomPlayer from "./component/CustomPlayer";
-
+import _ from 'lodash';
 
 let maxId = 4;
 
@@ -51,6 +51,11 @@ class App extends React.Component {
     })
   }
 
+  getHighScore() {
+    const maxObj = _.maxBy(this.state.players, 'score');
+    return maxObj.score ? maxObj.score : null;
+  }
+
   render() {
     return (
       <div className="scoreboard">
@@ -74,6 +79,7 @@ class App extends React.Component {
               id={player.id}
               removePlayer={this.handleRemovePlayer}
               changeScore={this.handleChangeScore}
+              isHighScore={player.score === this.getHighScore()}
             ></CustomPlayer>
           })
           // map : item(배열안 요소)의 그룹값만 모아서 새로운 배열을 만듦 (유사:map, reducer, filter)
