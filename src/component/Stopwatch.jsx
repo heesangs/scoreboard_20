@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
+import useInterval from '../hooks/useInterval'
 
 function Stopwatch() {
 
@@ -7,28 +8,19 @@ function Stopwatch() {
     const [timer, setTimer] = useState(0)
 
     const refIsRunning = useRef(false);
-    const refTickRef = useRef()
 
-    const tick = () => {
-        console.log(refIsRunning.current, timer)
-        if (refIsRunning.current) {
-            setTimer(timer => timer + 1)
+    
+    useInterval(() => {
+        if(isRunning){
+            setTimer(timer+1)
         }
-    }
+    },1000)
+    // 커스텀 훅은 이름이 use로 시작하고, 다른 훅을 호출할 수 있다. 
 
     const reset = () => {
         setTimer(0)
     }
 
-    useEffect(() => {
-        refTickRef.current = setInterval(tick, 1000);
-        return () => {
-            clearInterval(refTickRef.current);
-        }
-    });
-
-    // useEffect 돔이 랜더링 된 이후에 데이터나 API를 불러오는데 사용된다
-    // 컴포넌트 안에 useEffect를 사용하는 이유는 변수를 사용할 수 있기 때문이다 
 
     const getButton = () => {
         if (isRunning) {
