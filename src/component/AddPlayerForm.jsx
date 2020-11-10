@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 function AddPlayerForm(props) {
 
     const [value, setValue] = useState("");
 
-    const formRef = React.createRef();
-    const textRef = React.createRef();
+    const formRef = useRef(null);
+    const textRef = useRef();
 
     const handleChangeValue = (e) => {
         setValue(e.target.value)
@@ -15,6 +15,7 @@ function AddPlayerForm(props) {
 
         const form = formRef.current; //form node접근
         const player = textRef.current; //input node접근
+        //useRef를 사용하는 이유는 DOM을 선택하는 용도로 사용한다. 
         //document.getElementById(id)와 같은 기능
 
         console.log(form.checkValidity()); //폼 내의 모든 입력 validation을 체크
